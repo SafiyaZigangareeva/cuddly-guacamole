@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/globals.css">
+</head>
+<body>
+    <div class="paw-background"></div>
+    <div class="container">
+        <div class="game-info">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="next-piece">
+                <p>Next:</p>
+                <canvas id="nextPiece" width="128" height="128"></canvas>
+            </div>
+        </div>
+        <canvas id="game" width="320" height="640"></canvas>
+        <div class="controls">
+            <p>Controls:</p>
+            <p>←/→ - Move</p>
+            <p>↑ - Rotate</p>
+            <p>↓ - Soft Drop</p>
+            <p>Space - Hard Drop</p>
+            <p>P - Pause</p>
+            <p>R - Restart</p>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html> 

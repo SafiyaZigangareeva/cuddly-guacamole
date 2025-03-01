@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: white;
+  position: relative;
+  overflow: hidden;
+} 
+
+.paw-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.paw-background::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Создаем 50 отдельных лапок с разными позициями и поворотами */
+@for $i from 1 through 50 {
+  .paw-background::after:nth-child(#{$i}) {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('../public/images/pow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    left: #{random(100)}vw;
+    top: #{random(100)}vh;
+    transform: rotate(#{random(360)}deg);
+  }
+}
+
+/* Уберем старые стили паутины и тыкв */
+.spider-web,
+.pumpkin-container {
+  display: none;
+}
+
+/* Добавим маску для игрового поля, чтобы лапки не отображались под ним */
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+#game {
+  background: #FFFDF5;
+} 
